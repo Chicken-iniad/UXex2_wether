@@ -1,0 +1,213 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #1C1D1E;
+
+}
+
+.canvas-container {
+    position: relative;
+    width: calc(100% - 20px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Yu Gothic', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+
+}
+
+#bottom-contents {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10vw;
+}
+
+#weather-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2%;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0%;
+}
+
+#svg-line {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#city {
+    margin-left: 2%;
+    margin-right: 1%;
+}
+
+#yajirushi {
+    margin-top: 10vw;
+    margin-bottom: 30vw;
+}
+
+.icon-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5vw;
+    gap: 15vw;
+}
+
+.icon-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-items  p{
+    font-family: 'Yu Gothic', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.sa {
+    opacity: 0;
+    transition: show .5s ease;
+}
+
+.sa.show {
+    opacity: 1;
+    transform: none;
+}
+
+.sa--up {
+    transform: translate(0, 100px);
+}
+
+.icon-items p {
+    font-size: large;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+svg {
+    width: 100%;
+    fill: #ffffff;
+}
+
+.weather-item {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* アニメーションスタートの遅延時間を決めるCSS*/
+
+.item1 {
+    animation-delay: 0.1s;
+}
+
+.item2 {
+    animation-delay: 0.2s;
+}
+
+.item3 {
+    animation-delay: 0.3s;
+}
+
+.item4 {
+    animation-delay: 0.4s;
+}
+
+.item5 {
+    animation-delay: 0.5s;
+}
+
+.item6 {
+    animation-delay: 0.6s;
+}
+
+.item7 {
+    animation-delay: 0.7s;
+}
+
+
+
+.line polyline {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: .3px;
+    animation: svg-anime 0.3s linear;
+    stroke-miterlimit: 10;
+    stroke-width: 20px;
+}
+
+.line circle {
+    fill: #ffffff;
+    stroke: #ffffff;
+    stroke-width: .3px;
+    animation: svg-anime-circle 0.8s ease-out;
+}
+.line line {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: .3px;
+    animation: svg-anime 3s ease-in;
+    stroke-miterlimit: 10;
+    stroke-width: 20px;
+}
+
+@keyframes svg-anime {
+    0% {
+        stroke-dasharray: 1000px;
+        stroke-dashoffset: 1000px;
+    }
+
+    100% {
+        stroke-dasharray: 1000px;
+        stroke-dashoffset: 0px;
+    }
+}
+@keyframes svg-anime-circle {
+    0% {
+        fill: transparent;
+        stroke-dasharray: 1000px;
+        stroke-dashoffset: 1000px;
+    }
+
+    60% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: #ffffff;
+    }
+}
+
